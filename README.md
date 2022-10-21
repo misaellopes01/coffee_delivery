@@ -22,7 +22,7 @@
 - Exibir o valor total da soma de itens no carrinho multiplicados pelo valor
 
 ### Links
-**Figma UX/UI Design:**
-**Website:** <a href="https://www.figma.com/file/nQLVz50yBeTGYn9LuFi3LM/Coffee-Delivery-(Copy)?node-id=11%3A599">Coffee Delivery Figma Template</a>
+**Figma UX/UI Design:** <a href="https://www.figma.com/file/nQLVz50yBeTGYn9LuFi3LM/Coffee-Delivery-(Copy)?node-id=11%3A599">Coffee Delivery Figma Template</a> <br>
+**Website:** 
 
 #### Challenge By: **Ignite ReactJS - Rocketseat**
