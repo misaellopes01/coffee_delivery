@@ -1,20 +1,29 @@
 import { HeaderContainer } from "./styles";
-import { Timer, Scroll } from 'phosphor-react'
+import { ShoppingCart, MapPin } from 'phosphor-react'
 
-import logoIgnite from '../../assets/logo-ignite.svg'
-import { NavLink } from "react-router-dom";
+import logoCoffeeDelivery from '../../assets/coffee-delivery-logo.svg'
+import { Link, NavLink } from "react-router-dom";
 
 export function Header() {
     return (
         <HeaderContainer>
-            <img src={logoIgnite} alt="" />
+            <img src={logoCoffeeDelivery} alt="" />
             <nav>
-                <NavLink to="/" title="Timer">
-                    <Timer size={24} />
-                </NavLink>
-                <NavLink to="/history" title="Histórico">
-                    <Scroll size={24} />
-                </NavLink>
+                <div>
+                    <MapPin
+                        size={22}
+                        weight="fill"
+                    />
+                    <p>
+                        Lobito, BG
+                    </p>
+                </div>
+                <Link to={""}>
+                    <ShoppingCart
+                        size={22}
+                        weight="fill"
+                    />
+                </Link>
             </nav>
         </HeaderContainer>
     )
