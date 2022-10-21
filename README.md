@@ -2,7 +2,7 @@
 
 ![Coffee Delivery Cover!](https://lh3.googleusercontent.com/chat_attachment/AJh6FppVzzY7k_sAuIdJq0rTX9F2swux2Lhtv5RMO6t8dhR8TNcXuGfjM2_jgS6fPwyLajJPk3inEX1JKRyJ35fhM5nWzZ477tV0p8EnuvA3ojFPgj4wVljQDucAGhoIMo39-QQbw7gXXODKHf46K1-A7Y7qoldHcXuGXd6XDAPU1Cwz3P5ChdvfM0s3QQZNXKTd27zCWL5echaA6fSddn4=w512 "Coffee Delivery")
 
-## | ReactJS | TypeScript | Vite 
+## | ReactJS | TypeScript | Vite |
 
 - Estados
 - ContextAPI
