@@ -18,7 +18,7 @@ export const HomeContainer = styled.main`
             flex-direction: column;
 
             h1 {
-                font-family: 'Baloo';
+                font-family: 'Baloo 2';
                 font-weight: 800;
                 font-size: 3rem;
                 line-height: 1.3;
@@ -88,4 +88,25 @@ export const HomeContainer = styled.main`
             width: 40%;
         }
     }
+`
+
+export const MenuContainer = styled.section`
+    width: 100%;
+    height: 100%;
+    padding-bottom: 9rem;
+
+    h2 {
+        font-family: 'Baloo 2';
+        font-weight: 800;
+        font-size: 2rem;
+        color: ${props => props.theme['base-subtitle']};
+        margin-bottom: 3.375rem;
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem 2rem;
+    }
+
 `
