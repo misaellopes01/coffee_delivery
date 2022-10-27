@@ -17,6 +17,7 @@ import coffee10 from './../../assets/coffees/Coffee10.png'
 import coffee11 from './../../assets/coffees/Coffee11.png'
 import coffee12 from './../../assets/coffees/Coffee12.png'
 import coffee13 from './../../assets/coffees/Coffee13.png'
+import { useState } from "react";
 
 export interface IProductProps {
     id: number
@@ -31,7 +32,7 @@ export interface IProductProps {
 
 const productsList: IProductProps[] = [
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Expresso Tradicional',
         description: 'O tradicional café feito com água quente e grãos moídos',
         imageURL: coffee0,
@@ -43,7 +44,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Expresso Americano',
         description: 'Expresso diluído, menos intenso que o tradicional',
         imageURL: coffee1,
@@ -55,7 +56,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Expresso Cremoso',
         description: 'Café expresso tradicional com espuma cremosa',
         imageURL: coffee2,
@@ -67,7 +68,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Expresso Gelado',
         description: 'Bebida preparada com café expresso e cubos de gelo',
         imageURL: coffee3,
@@ -82,7 +83,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Café com Leite',
         description: 'Meio a meio de expresso tradicional com leite vaporizado',
         imageURL: coffee4,
@@ -97,7 +98,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Latte',
         description: 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
         imageURL: coffee5,
@@ -112,7 +113,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Cappuccino',
         description: 'Bebida com canela feita de doses iguais de café, leite e espuma',
         imageURL: coffee6,
@@ -127,7 +128,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Macchiato',
         description: 'Café expresso misturado com um pouco de leite quente e espuma',
         imageURL: coffee7,
@@ -142,7 +143,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Mocaccino',
         description: 'Café expresso com calda de chocolate, pouco leite e espuma',
         imageURL: coffee8,
@@ -157,7 +158,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Chocolate Quente',
         description: 'Bebida feita com chocolate dissolvido no leite quente e café',
         imageURL: coffee9,
@@ -172,7 +173,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Cubano',
         description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
         imageURL: coffee10,
@@ -191,7 +192,7 @@ const productsList: IProductProps[] = [
     },
 
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Havaiano',
         description: 'Bebida adocicada preparada com café e leite de coco',
         imageURL: coffee11,
@@ -203,7 +204,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Árabe',
         description: 'Bebida preparada com grãos de café árabe e especiarias',
         imageURL: coffee12,
@@ -215,7 +216,7 @@ const productsList: IProductProps[] = [
         ]
     },
     {
-        id: Math.random(),
+        id: Number(Math.random().toFixed(7)),
         name: 'Irlandês',
         description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
         imageURL: coffee13,
@@ -231,8 +232,23 @@ const productsList: IProductProps[] = [
     }
 ]
 
+interface ICartProductProps {
+    id: number
+    name: string
+    imageURL: string
+    price: number
+    total: number
+}
+
 
 export function Home() {
+
+    const [allProducts, setAllProducts] = useState<IProductProps[]>(productsList)
+    const [cartProducts, setCartProducts] = useState<ICartProductProps[]>([])
+
+    function handleSelectCoffee() {
+
+    }
 
     return (
         <>
@@ -269,13 +285,8 @@ export function Home() {
                     {productsList.map((item) => (
                         <CoffeeComp
                             key={item.id}
+                            data={item}
 
-                            description={item.description}
-                            id={item.id}
-                            imageURL={item.imageURL}
-                            name={item.name}
-                            price={item.price}
-                            tags={item.tags}
                         />
                     ))}
                 </section>

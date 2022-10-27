@@ -8,7 +8,7 @@ export const CoffeeContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 0 1.5rem 1.5rem 1.25rem;
+    padding: 0 1.25rem 1.5rem 1.25rem;
     background: ${props => props.theme['base-card']};
     border-radius: 6px 36px;
 

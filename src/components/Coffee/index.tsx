@@ -5,18 +5,23 @@ import { CoffeeContainer } from "./styles";
 import coffeeSample from './../../assets/coffees/Coffee0.png'
 import { IProductProps } from "../../pages/Home";
 
-export function CoffeeComp(ItemData: IProductProps) {
+interface IProductCoffeeProps {
+    data: IProductProps
+}
 
-    const { description, imageURL, name, price, tags } = ItemData
+export function CoffeeComp({ data }: IProductCoffeeProps) {
+
+    const { description, imageURL, name, price, tags, id } = data
 
     const sumPrice = price / 100
+
 
     return (
         <CoffeeContainer>
             <img src={imageURL} alt="" />
             <div className="content">
                 <div className="tags">
-                    {tags.map(item => <span>{item.title}</span>)}
+                    {tags.map(item => <span key={Number(Math.random().toFixed(5))}>{item.title}</span>)}
                 </div>
                 <strong>{name}</strong>
                 <p>{description}</p>
