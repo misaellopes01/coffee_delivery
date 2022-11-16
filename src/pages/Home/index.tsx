@@ -232,10 +232,9 @@ const productsList: IProductProps[] = [
     }
 ]
 
-interface ICartProductProps {
+export interface ICartProductProps {
     id: number
-    name: string
-    imageURL: string
+    quantity: number
     price: number
     total: number
 }
@@ -246,8 +245,12 @@ export function Home() {
     const [allProducts, setAllProducts] = useState<IProductProps[]>(productsList)
     const [cartProducts, setCartProducts] = useState<ICartProductProps[]>([])
 
-    function handleSelectCoffee() {
+    function handleSelectCoffee(data: ICartProductProps) {
+        const verify = cartProducts.find(item => item.id === data.id)
 
+        if (verify) {
+            setCartProducts(state => [...state, data])
+        }
     }
 
     return (
@@ -282,11 +285,11 @@ export function Home() {
             <MenuContainer>
                 <h2>Nossos cafés</h2>
                 <section className="products">
-                    {productsList.map((item) => (
+                    {allProducts.map((item) => (
                         <CoffeeComp
                             key={item.id}
                             data={item}
-
+                            handleSelectCoffee={handleSelectCoffee}
                         />
                     ))}
                 </section>

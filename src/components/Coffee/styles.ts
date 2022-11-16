@@ -109,12 +109,16 @@ export const CoffeeContainer = styled.div`
                     }
                 }
 
-                a {
+                button {
+                    outline-style: none;
+                    text-decoration: none;
+                    border-style: none;
                     display: flex;  
                     padding: 0.48rem;
                     color: ${props => props.theme['white']};
                     background: ${props => props.theme['purple-dark']};
                     border-radius: 6px;
+                    cursor: pointer;
                 }
             }
         }
