@@ -31,16 +31,14 @@ export function CoffeeComp({ data, handleSelectCoffee }: IProductCoffeeProps) {
     }
 
     function addCoffeeToCart() {
-        setProduct({
+        const total = Number((sumPrice * count).toFixed(1))
+
+        handleSelectCoffee({
             id,
             price: sumPrice,
             quantity: count,
-            total: price * count
+            total
         })
-
-        if (product) {
-            handleSelectCoffee(product)
-        }
     }
 
     return (
@@ -60,10 +58,11 @@ export function CoffeeComp({ data, handleSelectCoffee }: IProductCoffeeProps) {
                             <span>{count}</span>
                             <Plus size={14} weight="bold" onClick={handleCountPlusCoffee} />
                         </div>
-                        <button onClick={addCoffeeToCart}>
+                        <button>
                             <ShoppingCart
                                 size={22}
                                 weight="fill"
+                                onClick={addCoffeeToCart}
                             />
                         </button>
                     </div>

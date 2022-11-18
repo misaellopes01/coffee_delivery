@@ -17,7 +17,7 @@ import coffee10 from './../../assets/coffees/Coffee10.png'
 import coffee11 from './../../assets/coffees/Coffee11.png'
 import coffee12 from './../../assets/coffees/Coffee12.png'
 import coffee13 from './../../assets/coffees/Coffee13.png'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface IProductProps {
     id: number
@@ -246,12 +246,33 @@ export function Home() {
     const [cartProducts, setCartProducts] = useState<ICartProductProps[]>([])
 
     function handleSelectCoffee(data: ICartProductProps) {
-        const verify = cartProducts.find(item => item.id === data.id)
+        console.log(data)
+        const filteredCartList = cartProducts.find(item => item.id === data.id)
 
-        if (verify) {
+        if (filteredCartList) {
+            setCartProducts(state => state.map((item) => {
+                if (item.id === data.id) {
+                    return {
+                        ...item,
+                        quantity: data.quantity,
+                        total: data.total
+                    }
+                } else {
+                    return item
+                }
+            }))
+        }
+        if (!filteredCartList) {
             setCartProducts(state => [...state, data])
         }
+
+
     }
+    useEffect(() => {
+        console.log(`length: ${cartProducts.length}`, cartProducts)
+    }, [cartProducts])
+
+
 
     return (
         <>
